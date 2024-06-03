@@ -1,11 +1,14 @@
 package com.parcialpoo.ufg.MR100823.Console;
 
 import java.util.Scanner;
+
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 
 import com.parcialpoo.ufg.MR100823.models.Restaurant;
 import com.parcialpoo.ufg.MR100823.services.RestaurantService;
-
+@Component
 public class RestaurantConsoleApp {
     private static RestaurantService restaurantService;
 

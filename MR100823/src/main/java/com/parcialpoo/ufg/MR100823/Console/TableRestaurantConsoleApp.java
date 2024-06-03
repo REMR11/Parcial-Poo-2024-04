@@ -4,11 +4,13 @@ import java.util.List;
 
 import java.util.Scanner;
 
+import org.springframework.stereotype.Component;
+
 import com.parcialpoo.ufg.MR100823.models.Restaurant;
 import com.parcialpoo.ufg.MR100823.models.TableRestaurant;
 import com.parcialpoo.ufg.MR100823.services.RestaurantService;
 import com.parcialpoo.ufg.MR100823.services.TableRestaurantService;
-
+@Component
 public class TableRestaurantConsoleApp {
 	private static TableRestaurantService tableRestaurantService;
 	private static RestaurantService pRestaurantService;

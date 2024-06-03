@@ -3,6 +3,7 @@ package com.parcialpoo.ufg.MR100823.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.parcialpoo.ufg.MR100823.models.Reservation;
 import com.parcialpoo.ufg.MR100823.repository.ReservationRepository;
@@ -12,6 +13,7 @@ import com.parcialpoo.ufg.MR100823.repository.ReservationRepository;
  *
  * @author remr1
  */
+@Service
 public class ReservationService implements IReservationService {
 
     /**

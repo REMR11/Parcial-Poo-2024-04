@@ -2,13 +2,15 @@ package com.parcialpoo.ufg.MR100823.Console;
 //MenuConsoleApp.java
 import java.util.Scanner;
 
+import org.springframework.stereotype.Component;
+
 import com.parcialpoo.ufg.MR100823.models.Menu;
 import com.parcialpoo.ufg.MR100823.models.Restaurant;
 import com.parcialpoo.ufg.MR100823.services.MenuService;
 import com.parcialpoo.ufg.MR100823.services.RestaurantService;
 
 import java.util.List;
-
+@Component
 public class MenuConsoleApp {
  private static MenuService menuService;
  private static RestaurantService restaurantService;

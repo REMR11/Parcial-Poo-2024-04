@@ -2,6 +2,8 @@ package com.parcialpoo.ufg.MR100823.Console;
 
 import java.util.Scanner;
 
+import org.springframework.stereotype.Component;
+
 import com.parcialpoo.ufg.MR100823.models.FoodPlate;
 import com.parcialpoo.ufg.MR100823.models.Ingredient;
 import com.parcialpoo.ufg.MR100823.services.FoodPlateService;
@@ -9,7 +11,7 @@ import com.parcialpoo.ufg.MR100823.services.IngredientService;
 
 import java.util.List;
 import java.util.ArrayList;
-
+@Component
 public class FoodPlateConsoleApp {
 	private static FoodPlateService foodPlateService;
 	private static IngredientService pIngredientService;

@@ -2,6 +2,9 @@ package com.parcialpoo.ufg.MR100823.Console;
 
 import java.util.List;
 import java.util.Scanner;
+
+import org.springframework.stereotype.Component;
+
 import java.time.LocalTime;
 
 import com.parcialpoo.ufg.MR100823.models.Costumer;
@@ -10,7 +13,7 @@ import com.parcialpoo.ufg.MR100823.models.Restaurant;
 import com.parcialpoo.ufg.MR100823.services.ReservationService;
 import com.parcialpoo.ufg.MR100823.services.CostumerService;
 import com.parcialpoo.ufg.MR100823.services.RestaurantService;
-
+@Component
 public class ReservationConsoleApp {
 	private static ReservationService reservationService;
 	private static CostumerService costumerService;

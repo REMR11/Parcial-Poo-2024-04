@@ -2,6 +2,8 @@ package com.parcialpoo.ufg.MR100823.Console;
 
 import java.util.Scanner;
 
+import org.springframework.stereotype.Component;
+
 import com.parcialpoo.ufg.MR100823.models.Costumer;
 import com.parcialpoo.ufg.MR100823.models.FoodPlate;
 import com.parcialpoo.ufg.MR100823.models.OrderCostumer;
@@ -12,7 +14,7 @@ import com.parcialpoo.ufg.MR100823.services.OrderCostumerService;
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.Time;
-
+@Component
 public class OrderCostumerConsoleApp {
 	private static OrderCostumerService orderCostumerService;
 	private static FoodPlateService pPlateService;

@@ -1,12 +1,14 @@
 package com.parcialpoo.ufg.MR100823.Console;
 import java.util.Scanner;
 
+import org.springframework.stereotype.Component;
+
 import com.parcialpoo.ufg.MR100823.models.Costumer;
 import com.parcialpoo.ufg.MR100823.services.CostumerService;
 
 import java.util.List;
 
-
+@Component
 public class CostumerConsoleApp {
     private static CostumerService costumerService;
 

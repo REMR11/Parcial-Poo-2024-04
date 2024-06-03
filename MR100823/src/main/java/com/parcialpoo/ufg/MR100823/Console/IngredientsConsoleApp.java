@@ -2,11 +2,13 @@ package com.parcialpoo.ufg.MR100823.Console;
 //IngredientConsoleApp.java
 import java.util.Scanner;
 
+import org.springframework.stereotype.Component;
+
 import com.parcialpoo.ufg.MR100823.models.Ingredient;
 import com.parcialpoo.ufg.MR100823.services.IngredientService;
 
 import java.util.List;
-
+@Component
 public class IngredientsConsoleApp {
  private static IngredientService ingredientService;
 
