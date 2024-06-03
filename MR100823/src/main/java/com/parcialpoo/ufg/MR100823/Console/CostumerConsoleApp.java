@@ -6,10 +6,11 @@ import com.parcialpoo.ufg.MR100823.services.CostumerService;
 
 import java.util.List;
 
+
 public class CostumerConsoleApp {
     private static CostumerService costumerService;
 
-    public static void main(String[] args) {
+    public static void costumerConsoleAppmain() {
         costumerService = new CostumerService();
 
         Scanner scanner = new Scanner(System.in);

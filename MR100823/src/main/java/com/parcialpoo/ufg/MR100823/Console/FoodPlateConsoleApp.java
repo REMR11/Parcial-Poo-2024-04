@@ -14,7 +14,7 @@ public class FoodPlateConsoleApp {
 	private static FoodPlateService foodPlateService;
 	private static IngredientService pIngredientService;
 
-	public static void foodPlateConsole() {
+	public static void foodPlateConsolemain() {
 		foodPlateService = new FoodPlateService();
 		pIngredientService = new IngredientService();
 		Scanner scanner = new Scanner(System.in);

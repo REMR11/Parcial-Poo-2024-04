@@ -9,7 +9,7 @@ import com.parcialpoo.ufg.MR100823.services.RestaurantService;
 public class RestaurantConsoleApp {
     private static RestaurantService restaurantService;
 
-    public static void main(String[] args) {
+    public static void restaurantConsoleAppMain() {
         restaurantService = new RestaurantService();
 
         Scanner scanner = new Scanner(System.in);

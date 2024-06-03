@@ -16,7 +16,7 @@ public class ReservationConsoleApp {
 	private static CostumerService costumerService;
 	private static RestaurantService restaurantService;
 
-	public static void main(String[] args) {
+	public static void reservationConsoleAppMain() {
 		reservationService = new ReservationService();
 		costumerService = new CostumerService();
 		restaurantService = new RestaurantService();

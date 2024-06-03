@@ -10,7 +10,7 @@ import java.util.List;
 public class IngredientsConsoleApp {
  private static IngredientService ingredientService;
 
- public static void main(String[] args) {
+ public static void ingredientsConsoleAppmain() {
      ingredientService = new IngredientService();
 
      Scanner scanner = new Scanner(System.in);

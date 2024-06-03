@@ -17,7 +17,7 @@ public class OrderCostumerConsoleApp {
 	private static OrderCostumerService orderCostumerService;
 	private static FoodPlateService pPlateService;
 	private static CostumerService  pCostumerService;
-	public static void main(String[] args) {
+	public static void orderCostumerConsoleAppMain() {
 		orderCostumerService = new OrderCostumerService();
 		pPlateService = new FoodPlateService();
 		pCostumerService = new CostumerService();

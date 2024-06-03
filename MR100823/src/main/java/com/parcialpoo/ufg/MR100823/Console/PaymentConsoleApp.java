@@ -13,7 +13,7 @@ public class PaymentConsoleApp {
  private static PaymentService paymentService;
  private static OrderCostumerService orderCostumerService;
 
- public static void main(String[] args) {
+ public static void paymentConsoleAppMain() {
      paymentService = new PaymentService();
      orderCostumerService = new OrderCostumerService();
 

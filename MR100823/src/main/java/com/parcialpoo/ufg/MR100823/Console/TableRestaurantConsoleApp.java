@@ -13,7 +13,7 @@ public class TableRestaurantConsoleApp {
 	private static TableRestaurantService tableRestaurantService;
 	private static RestaurantService pRestaurantService;
 
-	public static void main(String[] args) {
+	public static void tableRestaurantConsoleAppMain() {
 		tableRestaurantService = new TableRestaurantService();
 		pRestaurantService = new RestaurantService();
 
