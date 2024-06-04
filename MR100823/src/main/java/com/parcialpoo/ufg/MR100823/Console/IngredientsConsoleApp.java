@@ -118,7 +118,7 @@ public class IngredientsConsoleApp {
 	}
 
 	public static void colletionData(Ingredient pIngredient, Scanner scanner) {
-		pIngredient.setName(Validator.getName());
+		pIngredient.setName(Validator.getName(scanner));
 		pIngredient.setDescription(Validator.getDescription(scanner));
 		pIngredient.setAmount(Validator.getAmount());
 		pIngredient.setPrice(Validator.getPrice(scanner));

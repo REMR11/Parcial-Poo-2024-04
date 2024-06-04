@@ -152,7 +152,7 @@ public class FoodPlateConsoleApp {
 	}
 	
 	private static void collectionData(FoodPlate foodPlate, Scanner scanner) {
-		foodPlate.setName(Validator.getName());
+		foodPlate.setName(Validator.getName(scanner));
 		foodPlate.setDescription(Validator.getDescription(scanner));
 		float price =0;
 		

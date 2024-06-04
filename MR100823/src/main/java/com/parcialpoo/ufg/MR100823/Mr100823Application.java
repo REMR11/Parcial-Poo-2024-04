@@ -8,7 +8,7 @@ public class Mr100823Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Mr100823Application.class, args);
-		
+		ConsoleApp.initConsoleApp(args);
 	}
 
 }

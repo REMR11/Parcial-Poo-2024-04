@@ -130,7 +130,7 @@ public class MenuConsoleApp {
 	}
 	
 	private static void collectionData(Menu menu, Scanner scanner) {
-		menu.setName(Validator.getName());
+		menu.setName(Validator.getName(scanner));
 		menu.setDescription(Validator.getDescription(scanner));
 		System.out.println(restaurantService.showAll());
 		int restaurantId = Validator.getId(scanner);

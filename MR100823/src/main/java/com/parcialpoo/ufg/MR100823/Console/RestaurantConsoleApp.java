@@ -129,7 +129,7 @@ public class RestaurantConsoleApp {
 	}
 
 	private static void collectionData(Restaurant restaurant, Scanner scanner) {
-		restaurant.setName(Validator.getName());
+		restaurant.setName(Validator.getName(scanner));
 		restaurant.setAddress(Validator.getAddress(scanner));
 		restaurant.setPhoneNumber(Validator.getPhoneNumber());
 

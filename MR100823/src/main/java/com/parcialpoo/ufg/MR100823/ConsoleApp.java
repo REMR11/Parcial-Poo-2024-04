@@ -2,6 +2,8 @@ package com.parcialpoo.ufg.MR100823;
 
 import java.util.Scanner;
 
+import org.springframework.boot.SpringApplication;
+
 import com.parcialpoo.ufg.MR100823.Console.*;
 
 /**
@@ -15,6 +17,7 @@ import com.parcialpoo.ufg.MR100823.Console.*;
  * 
  * @author remr1
  */
+
 public class ConsoleApp {
 	private static CostumerConsoleApp pCostumerConsoleApp;
 	private static FoodPlateConsoleApp pFoodPlateConsoleApp;
@@ -26,7 +29,9 @@ public class ConsoleApp {
 	private static RestaurantConsoleApp pRestaurantConsoleApp;
 	private static TableRestaurantConsoleApp pTableRestaurantConsoleApp;
 
-	public static void main(String[] args) {
+	public static void initConsoleApp(String[] args) {
+		 // Código del método main original
+        SpringApplication.run(ConsoleApp.class, args);
 		primaryConsoleApp();
 		showMenu();
 	}

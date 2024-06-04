@@ -82,8 +82,9 @@ public class Validator {
 		String email;
 		while (true) {
 			try {
+				Scanner scanner = new Scanner(System.in);
 				System.out.print("Ingrese un correo electrónico: ");
-				email = System.console().readLine();
+				email = scanner.nextLine();
 				// Lógica para validar el correo electrónico
 				// Por ejemplo, utilizando una expresión regular
 				String emailRegex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
@@ -104,25 +105,25 @@ public class Validator {
 	 * 
 	 * @return un nombre válido
 	 */
-	public static String getName() {
-		String name;
-		while (true) {
-			try {
-				System.out.print("Ingrese un nombre: ");
-				name = System.console().readLine();
-				// Lógica para validar el nombre
-				// Por ejemplo, verificando que no esté vacío y tenga al menos 2 caracteres
-				if (!name.isEmpty() && name.trim().length() >= 2) {
-					return name;
-				} else {
-					System.out.println("Nombre inválido. Intente nuevamente.");
-				}
-			} catch (NullPointerException e) {
-				// Manejar excepción en caso de que el nombre sea nulo
-				System.err.println("El nombre no puede ser nulo");
-			}
-		}
-	}
+	public static String getName(Scanner scanner) {
+        String name;
+        while (true) {
+            try {
+                System.out.print("Ingrese un nombre: ");
+                name = scanner.nextLine();
+                // Lógica para validar el nombre
+                // Por ejemplo, verificando que no esté vacío y tenga al menos 2 caracteres
+                if (!name.isEmpty() && name.trim().length() >= 2) {
+                    return name;
+                } else {
+                    System.out.println("Nombre inválido. Intente nuevamente.");
+                }
+            } catch (NullPointerException e) {
+                // Manejar excepción en caso de que el nombre sea nulo
+                System.err.println("El nombre no puede ser nulo");
+            }
+        }
+    }
 
 	/**
 	 * Verifica si una contraseña es válida.
@@ -133,8 +134,11 @@ public class Validator {
 		String password;
 		while (true) {
 			try {
-				System.out.print("Ingrese una contraseña: ");
-				password = System.console().readLine();
+				Scanner scanner = new Scanner(System.in);
+				System.out.print("Ingrese tu contrasenia: ");
+				System.out.print("Debe cotener al menos 8 caracteres y contenga \n"
+						+ "al menos una letra mayúscula y un número");
+				password = scanner.nextLine();
 				// Lógica para validar la contraseña
 				// Por ejemplo, verificando que tenga al menos 8 caracteres y contenga al menos
 				// una letra mayúscula y un número
@@ -159,8 +163,9 @@ public class Validator {
 		String phoneNumber;
 		while (true) {
 			try {
-				System.out.print("Ingrese un número de teléfono: ");
-				phoneNumber = System.console().readLine();
+				Scanner scanner = new Scanner(System.in);
+				System.out.print("Ingrese un numero de telefono: ");
+				phoneNumber = scanner.nextLine();
 				// Lógica para validar el número de teléfono
 				// Por ejemplo, verificando que sea un número positivo y tenga al menos 7
 				// dígitos
@@ -267,8 +272,9 @@ public class Validator {
 		String amount;
 		while (true) {
 			try {
-				System.out.print("Ingrese una cantidad: ");
-				amount = System.console().readLine();
+				Scanner scanner = new Scanner(System.in);
+				System.out.print("Ingrese un cantidad: ");
+				amount = scanner.nextLine();
 				// Lógica para validar la cantidad
 				// Por ejemplo, verificando que sea un número entero positivo
 				int amountInt = Integer.parseInt(amount);
