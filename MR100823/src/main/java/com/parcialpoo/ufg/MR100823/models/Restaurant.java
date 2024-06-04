@@ -65,28 +65,26 @@ public class Restaurant {
      */
     public Restaurant() {}
 
-    /**
-     * Constructor con todos los atributos.
-     *
-     * @param restaurant_Id Identificador único del restaurante.
-     * @param address Dirección del restaurante.
-     * @param name Nombre del restaurante.
-     * @param phoneNumber Número de teléfono del restaurante.
-     * @param tables Lista de mesas del restaurante.
-     * @param reservations Lista de reservaciones del restaurante.
-     * @param menus Lista de menús del restaurante.
-     */
-    public Restaurant(int restaurant_Id, String address, String name, int phoneNumber, List<TableRestaurant> tables, List<Reservation> reservations, List<Menu> menus) {
-        this.restaurant_Id = restaurant_Id;
-        this.address = address;
-        this.name = name;
-        this.phoneNumber = phoneNumber;
-        this.tables = tables;
-        this.reservations = reservations;
-        this.menus = menus;
-    }
+	/**
+	 * @param address
+	 * @param name
+	 * @param phoneNumber
+	 * @param tables
+	 * @param reservations
+	 * @param menus
+	 */
+	public Restaurant(String address, String name, int phoneNumber, List<TableRestaurant> tables,
+			List<Reservation> reservations, List<Menu> menus) {
+		super();
+		this.address = address;
+		this.name = name;
+		this.phoneNumber = phoneNumber;
+		this.tables = tables;
+		this.reservations = reservations;
+		this.menus = menus;
+	}
 
-    // Getters and setters
+	// Getters and setters
 
     public int getRestaurant_Id() {
         return restaurant_Id;

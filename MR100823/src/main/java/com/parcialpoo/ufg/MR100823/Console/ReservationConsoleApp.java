@@ -13,12 +13,35 @@ import com.parcialpoo.ufg.MR100823.models.Restaurant;
 import com.parcialpoo.ufg.MR100823.services.ReservationService;
 import com.parcialpoo.ufg.MR100823.services.CostumerService;
 import com.parcialpoo.ufg.MR100823.services.RestaurantService;
+
+/**
+ * Clase que proporciona una interfaz de consola para interactuar con la gestión
+ * de reservaciones.
+ * 
+ * Esta clase permite crear, leer, actualizar y eliminar reservaciones,
+ * utilizando los servicios de reservaciones, clientes y restaurantes
+ * proporcionados por {@link ReservationService}, {@link CostumerService} y
+ * {@link RestaurantService}.
+ * 
+ * @author [Tu nombre]
+ */
 @Component
 public class ReservationConsoleApp {
 	private static ReservationService reservationService;
 	private static CostumerService costumerService;
 	private static RestaurantService restaurantService;
 
+	/**
+	 * Clase que proporciona una interfaz de consola para interactuar con la gestión
+	 * de reservaciones.
+	 * 
+	 * Esta clase permite crear, leer, actualizar y eliminar reservaciones,
+	 * utilizando los servicios de reservaciones, clientes y restaurantes
+	 * proporcionados por {@link ReservationService}, {@link CostumerService} y
+	 * {@link RestaurantService}.
+	 * 
+	 * @author [Tu nombre]
+	 */
 	public static void reservationConsoleAppMain() {
 		reservationService = new ReservationService();
 		costumerService = new CostumerService();
@@ -57,6 +80,12 @@ public class ReservationConsoleApp {
 		}
 	}
 
+	/**
+	 * Método que crea una nueva reservación solicitando la información necesaria al
+	 * usuario.
+	 * 
+	 * @param scanner objeto {@link Scanner} para leer la entrada del usuario
+	 */
 	private static void createReservation(Scanner scanner) {
 		System.out.print("Ingrese el ID del cliente: ");
 		int costumerId = scanner.nextInt();
@@ -81,6 +110,9 @@ public class ReservationConsoleApp {
 		System.out.println("Reservación creada exitosamente!");
 	}
 
+	/**
+	 * Método que muestra la lista de todas las reservaciones existentes.
+	 */
 	private static void readReservations() {
 		List<Reservation> reservations = reservationService.showAll();
 		for (Reservation reservation : reservations) {
@@ -88,6 +120,12 @@ public class ReservationConsoleApp {
 		}
 	}
 
+	/**
+	 * Método que actualiza la información de una reservación existente solicitando
+	 * la nueva información al usuario.
+	 * 
+	 * @param scanner objeto {@link Scanner} para leer la entrada del usuario
+	 */
 	private static void updateReservation(Scanner scanner) {
 		System.out.print("Ingrese el ID de la reservación a actualizar: ");
 		int reservationId = scanner.nextInt();
@@ -111,6 +149,11 @@ public class ReservationConsoleApp {
 		System.out.println("Reservación actualizada exitosamente!");
 	}
 
+	/**
+	 * Método que elimina una reservación existente según su ID.
+	 * 
+	 * @param scanner objeto {@link Scanner} para leer la entrada del usuario
+	 */
 	private static void deleteReservation(Scanner scanner) {
 		System.out.println(reservationService.showAll() + "\n");
 		System.out.print("Ingrese el ID de la reservación a eliminar: ");

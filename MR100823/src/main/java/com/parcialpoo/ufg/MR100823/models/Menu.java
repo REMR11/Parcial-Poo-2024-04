@@ -69,21 +69,28 @@ public class Menu {
 	public Menu() {
 	}
 
+
+
 	/**
-	 * Constructor con todos los atributos.
-	 *
-	 * @param menu_Id     Identificador único del menú.
-	 * @param name        Nombre del menú.
-	 * @param description Descripción del menú.
-	 * @param price       Precio del menú.
-	 * @param restaurant  Restaurante al que pertenece el menú.
+	 * @param name
+	 * @param description
+	 * @param price
+	 * @param restaurant
+	 * @param tables
+	 * @param foodPlates
 	 */
-	public Menu(String name, String description, int price, Restaurant restaurant) {
+	public Menu(String name, String description, int price, Restaurant restaurant, List<TableRestaurant> tables,
+			List<FoodPlate> foodPlates) {
+		super();
 		this.name = name;
 		this.description = description;
 		this.price = price;
 		this.restaurant = restaurant;
+		this.tables = tables;
+		this.foodPlates = foodPlates;
 	}
+
+
 
 	// Getters and setters
 

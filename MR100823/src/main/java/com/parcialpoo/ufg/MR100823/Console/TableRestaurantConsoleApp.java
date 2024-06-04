@@ -10,11 +10,27 @@ import com.parcialpoo.ufg.MR100823.models.Restaurant;
 import com.parcialpoo.ufg.MR100823.models.TableRestaurant;
 import com.parcialpoo.ufg.MR100823.services.RestaurantService;
 import com.parcialpoo.ufg.MR100823.services.TableRestaurantService;
+
+/**
+ * Clase que proporciona una interfaz de consola para interactuar con la gestión
+ * de mesas de restaurantes.
+ * 
+ * Esta clase permite crear, leer, actualizar y eliminar mesas de restaurantes,
+ * utilizando los servicios de mesas de restaurantes y restaurantes
+ * proporcionados por {@link TableRestaurantService} y
+ * {@link RestaurantService}.
+ * 
+ * @author remr1
+ */
 @Component
 public class TableRestaurantConsoleApp {
 	private static TableRestaurantService tableRestaurantService;
 	private static RestaurantService pRestaurantService;
 
+	/**
+	 * Método principal de la aplicación de consola de mesas de restaurantes que
+	 * muestra un menú para interactuar con la gestión de mesas.
+	 */
 	public static void tableRestaurantConsoleAppMain() {
 		tableRestaurantService = new TableRestaurantService();
 		pRestaurantService = new RestaurantService();
@@ -52,27 +68,23 @@ public class TableRestaurantConsoleApp {
 		}
 	}
 
+	/**
+	 * Método que crea una nueva mesa de restaurante solicitando la información
+	 * necesaria al usuario.
+	 * 
+	 * @param scanner objeto {@link Scanner} para leer la entrada del usuario
+	 */
 	private static void createTable(Scanner scanner) {
-		System.out.print("Ingrese la capacidad de la mesa: ");
-		int capacity = scanner.nextInt();
-
-		System.out.print("Ingrese la descripción de la mesa: ");
-		String description = scanner.next();
-
-		System.out.print("Ingrese el tema de la mesa: ");
-		String topic = scanner.next();
-
-		System.out.println(pRestaurantService.showAll());
-		System.out.print("Ingrese el ID del restaurante: ");
-		int restaurantId = scanner.nextInt();
-		Restaurant restaurant = pRestaurantService.FindById(restaurantId);
-
-		TableRestaurant table = new TableRestaurant(capacity, description, topic, true, restaurant);
+		TableRestaurant table = new TableRestaurant();
+		collectionData(table, scanner);
 		tableRestaurantService.saveTableRestaurant(table);
 
 		System.out.println("Mesa creada exitosamente!");
 	}
 
+	/**
+	 * Método que muestra la lista de todas las mesas de restaurantes existentes.
+	 */
 	private static void readTables() {
 		List<TableRestaurant> tables = tableRestaurantService.showAll();
 		for (TableRestaurant table : tables) {
@@ -80,28 +92,28 @@ public class TableRestaurantConsoleApp {
 		}
 	}
 
+	/**
+	 * Método que actualiza la información de una mesa de restaurante existente
+	 * solicitando la nueva información al usuario.
+	 * 
+	 * @param scanner objeto {@link Scanner} para leer la entrada del usuario
+	 */
 	private static void updateTable(Scanner scanner) {
 		System.out.print("Ingrese el ID de la mesa a actualizar: ");
 		int tableId = scanner.nextInt();
-
-		System.out.print("Ingrese la nueva capacidad de la mesa: ");
-		int capacity = scanner.nextInt();
-
-		System.out.print("Ingrese la nueva descripción de la mesa: ");
-		String description = scanner.next();
-
-		System.out.print("Ingrese el nuevo tema de la mesa: ");
-		String topic = scanner.next();
-
 		TableRestaurant table = tableRestaurantService.FindById(tableId);
-		table.setCapacity(capacity);
-		table.setDescription(description);
-		table.setTopic(topic);
+		collectionData(table, scanner);	
+		
 		tableRestaurantService.saveTableRestaurant(table);
 
 		System.out.println("Mesa actualizada exitosamente!");
 	}
 
+	/**
+	 * Método que elimina una mesa de restaurante existente según su ID.
+	 * 
+	 * @param scanner objeto {@link Scanner} para leer la entrada del usuario
+	 */
 	private static void deleteTable(Scanner scanner) {
 		System.out.print("Ingrese el ID de la mesa a eliminar: ");
 		int tableId = scanner.nextInt();
@@ -109,5 +121,27 @@ public class TableRestaurantConsoleApp {
 		tableRestaurantService.deleteTableRestaurant(table);
 
 		System.out.println("Mesa eliminada exitosamente!");
+	}
+
+	private static void collectionData(TableRestaurant table, Scanner scanner) {
+		System.out.print("Capacidad de la mesa: ");
+		table.setCapacity(Validator.getAmount());
+		table.setDescription(Validator.getDescription(scanner));
+		table.toString();
+
+		System.out.print("Descripción de la mesa: ");
+		String description = scanner.next();
+
+		System.out.print("Tema de la mesa: ");
+		table.setTopic(Validator.getTopic(scanner));
+
+		System.out.println(pRestaurantService.showAll());
+		System.out.print("Ingrese el ID del restaurante: ");
+		int restaurantId = Validator.getId(scanner);
+		Restaurant restaurant = pRestaurantService.FindById(restaurantId);
+		table.setRestaurant(restaurant);
+		
+		table.setStatus(Validator.getBooleanStatus(scanner, "Esta mesa esta habilitada?"));
+
 	}
 }
