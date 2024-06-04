@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.parcialpoo.ufg.MR100823"},{"l":"com.parcialpoo.ufg.MR100823.Console"},{"l":"com.parcialpoo.ufg.MR100823.models"},{"l":"com.parcialpoo.ufg.MR100823.repository"},{"l":"com.parcialpoo.ufg.MR100823.services"}];updateSearchResults();

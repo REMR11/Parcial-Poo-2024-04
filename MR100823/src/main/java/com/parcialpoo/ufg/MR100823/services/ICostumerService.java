@@ -2,6 +2,8 @@ package com.parcialpoo.ufg.MR100823.services;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.parcialpoo.ufg.MR100823.models.Costumer;
 
 /**
@@ -9,6 +11,7 @@ import com.parcialpoo.ufg.MR100823.models.Costumer;
  *
  * @author remr1
  */
+@Service
 public interface ICostumerService {
 
     /**

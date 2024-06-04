@@ -2,6 +2,7 @@ package com.parcialpoo.ufg.MR100823.Console;
 
 import java.util.Scanner;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.parcialpoo.ufg.MR100823.models.Costumer;
@@ -20,13 +21,14 @@ import java.util.List;
  */
 @Component
 public class CostumerConsoleApp {
-	private static CostumerService costumerService;
+	@Autowired
+	private   CostumerService costumerService;
 
 	/**
 	 * Método principal de la aplicación de consola de clientes que muestra un menú
 	 * para interactuar con la gestión de clientes.
 	 */
-	public static void costumerConsoleAppmain() {
+	public   void costumerConsoleAppmain() {
 		costumerService = new CostumerService();
 
 		Scanner scanner = new Scanner(System.in);
@@ -68,7 +70,7 @@ public class CostumerConsoleApp {
 	 * 
 	 * @param scanner objeto {@link Scanner} para leer la entrada del usuario
 	 */
-	private static void createCostumer(Scanner scanner) {
+	private   void createCostumer(Scanner scanner) {
 		Costumer costumer = new Costumer();
 		collectionData(costumer, scanner);
 		costumerService.saveCostumer(costumer);
@@ -79,7 +81,7 @@ public class CostumerConsoleApp {
 	/**
 	 * Método que muestra la lista de todos los clientes existentes.
 	 */
-	private static void readCostumers() {
+	private   void readCostumers() {
 		List<Costumer> costumers = costumerService.showAll();
 		for (Costumer costumer : costumers) {
 			System.out.println(costumer.toString());
@@ -92,7 +94,7 @@ public class CostumerConsoleApp {
 	 * 
 	 * @param scanner objeto {@link Scanner} para leer la entrada del usuario
 	 */
-	private static void updateCostumer(Scanner scanner) {
+	private   void updateCostumer(Scanner scanner) {
 		int id = Validator.getId(scanner);
 		Costumer costumer = costumerService.FindById(id);
 		collectionData(costumer, scanner);
@@ -106,7 +108,7 @@ public class CostumerConsoleApp {
 	 * 
 	 * @param scanner objeto {@link Scanner} para leer la entrada del usuario
 	 */
-	private static void deleteCostumer(Scanner scanner) {
+	private   void deleteCostumer(Scanner scanner) {
 		int id = Validator.getId(scanner);
 		Costumer pCostumer = costumerService.FindById(id);
 		costumerService.deleteCostumer(pCostumer);
@@ -114,7 +116,7 @@ public class CostumerConsoleApp {
 		System.out.println("Costumer eliminado exitosamente!");
 	}
 
-	private static void collectionData(Costumer pCostumer, Scanner scanner) {
+	private   void collectionData(Costumer pCostumer, Scanner scanner) {
 		System.out.print("Name: ");
 		String name = scanner.nextLine();
 		pCostumer.setName(name);
